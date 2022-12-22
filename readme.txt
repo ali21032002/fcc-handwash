@@ -1,6 +1,7 @@
 npx degit sveltejs/template .
 npm install
 npm run dev
+npm install --save-dev gh-pages
 ------------
 
 
