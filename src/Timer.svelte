@@ -1,7 +1,7 @@
 <script>
     import ProgressBar from "./ProgressBar.svelte"; 
 
-    const totalSecons =20;
+    const totalSecons =2;
     let secondLeft = totalSecons;
     let isRunning =false;
     
@@ -9,10 +9,10 @@
 
     let startTimer = () =>{
         if(!isRunning){
+            debugger;
             isRunning=true;
             let timer = setInterval(()=>{
                 secondLeft-=1;
-                    progressCounter+=1;        
                 if(secondLeft==0){
                     clearInterval(timer);
                     isRunning=false;
@@ -21,7 +21,7 @@
             },1000);
         }
         
-        }
+    }
     
 </script>
 <style>
