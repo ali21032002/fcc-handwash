@@ -1,4 +1,6 @@
 <script>
+    import {createEventDispatcher} from 'svelte';
+
     import ProgressBar from "./ProgressBar.svelte"; 
 
     const totalSecons =2;
@@ -7,6 +9,7 @@
     
     $:progress =((totalSecons - secondLeft)/totalSecons)*100;
 
+    const dispatch = createEventDispatcher();
     let startTimer = () =>{
         if(!isRunning){
             isRunning=true;
@@ -16,6 +19,7 @@
                     clearInterval(timer);
                     isRunning=false;
                     secondLeft=totalSecons;
+                    dispatch('end','fuck you the besty choose ')
                 }                    
             },1000);
         }

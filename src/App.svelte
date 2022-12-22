@@ -2,6 +2,11 @@
 <script>
 	import Timer from "./Timer.svelte"; 
 	import HowTo from "./howTo.svelte"; 
+	let audio ;
+	let timerEnds = (e) =>{
+		console.log(e.detail);
+		audio.play();
+	}
 </script>
 <style>
     h3 {
@@ -9,7 +14,7 @@
 	}
 </style>
 
-<Timer/>
+<Timer  on:end={timerEnds}/>
 <HowTo/>
 
 <h3>
@@ -21,3 +26,7 @@
 		Sound source
 	</a>
 </h3>
+
+<audio bind:this={audio}>
+	<source src="sound.wav">
+</audio>
