@@ -9,7 +9,6 @@
 
     let startTimer = () =>{
         if(!isRunning){
-            debugger;
             isRunning=true;
             let timer = setInterval(()=>{
                 secondLeft-=1;
